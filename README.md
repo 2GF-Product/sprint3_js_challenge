@@ -10,8 +10,8 @@ Uma app para gerar faturas, a api podera consumir dados de outras apis externas,
 - Documentação
 - Metodologia Scrum, quadro Kanban
 
-### Funcionalidades
-1. Aplicação Web
+## Funcionalidades
+### 1. Aplicação Web
 
 * [ ] Formulario para inserir dados do utilizador(nome, email, endereço).
 
@@ -29,7 +29,7 @@ Uma app para gerar faturas, a api podera consumir dados de outras apis externas,
 
 * [ ] Autenticacao de usuarios.
 
-2. Api
+### 2. Api
 
 * [ ] Persistencia de dados de utilizador e fatura.
 
@@ -37,7 +37,7 @@ Uma app para gerar faturas, a api podera consumir dados de outras apis externas,
 
 * [ ] Consumir dados de uma api externa.
 
-3. Aplicação Mobile
+### 3. Aplicação Mobile
 
 * [ ] Formulario para inserir dados do utilizador(nome, email, endereço).
 
@@ -57,7 +57,7 @@ Uma app para gerar faturas, a api podera consumir dados de outras apis externas,
 
 ### Extras
 
-* [ ] TDD será que rola? Acho que vale a tentativa!
+* [ ] TDD? Acha que vale a tentativa?
 
 * [ ] Ja ouviu falar de microfrontends? Consegue colocar Vue e React a trabalharem lado a lado na mesma app?
 
@@ -65,7 +65,7 @@ Uma app para gerar faturas, a api podera consumir dados de outras apis externas,
 
 Sinta-se livre pra desenvolver sua solução da melhor maneira possível.
 
-### Arquitetura esperada
+## Arquitetura esperada
 
 1. Just don't overthink it.
 

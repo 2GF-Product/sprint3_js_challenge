@@ -67,7 +67,9 @@ Sinta-se livre pra desenvolver sua solução da melhor maneira possível.
 
 ### Arquitetura esperada
 
-Exemplo de arquitetura/estrutura
+1. Just don't overthink it.
+
+2. https://dev.to/nilanth/react-architecture-for-enterprise-application-3pnh
 
 ## Submissão
 
@@ -93,6 +95,8 @@ Api
 - https://erickwendel.teachable.com/p/node-js-para-iniciantes-nodebr
 
 Flutter
+- https://developers.google.com/profile/badges/playlists/intro-to-flutter/
+
 - https://flutter.dev/apprentice-giveaway
 
 ## Até quando?

@@ -1,93 +1,93 @@
-# Sprint 3 - JS challenge
+# Sprint 3 - Technical challenge
 ## Story: Invoice APP...
 
-Uma app para gerar faturas, a api podera consumir dados de outras apis externas, comunica com um frontend web ou mobile interagindo com o utilizador que ira inserir dados como produto, quantidade, preço etc, e por ultimo a app tem a possibilidade de partilhar a fatura gerada com terceiros via partilha de um link https.
+> An app to generate invoices, the api should consume data from other external apis, communicate with a web frontend, and even a mobile version interacting with the user who will enter data such as product, quantity, price etc, and finally the app has the possibility to share the generated invoice with third parties via sharing an https link.
 
-## Requisitos
-- Aplicacao web baseada em react ou Vue
-- Aplicacao mobile baseada em flutter
-- Hospedagem multicloud a seu criterio (Heroku, Versel, AWS, Cloudfare, Azure, GCP...), mas tera de sustentar sua escolha.
-- Documentação
-- Metodologia Scrum, quadro Kanban
+## Requirements
+- Web application based on react and/or Vue
+- Flutter-based mobile application
+- Multicloud hosting at your discretion (Heroku, Versel, AWS, Cloudfare, Azure, GCP...), but you will have to support your choice.
+- Documentation
+- Scrum Methodology, Kanban board
 
-## Funcionalidades
-### 1. Aplicação Web
+## Features
+### 1. Web application
 
-* [ ] Formulario para inserir dados do utilizador(nome, email, endereço).
+* [ ] Form to insert user data (name, email, address).
 
-* [ ] Formulario para inserir dados da fatura(produto, quantidade, preço, imposto, total).
+* [ ] Form for entering invoice data (product, quantity, price, tax, total).
 
-* [ ] Tabela de items da fatura(atuaização dinamica com a inserção de novos items).
+* [ ] Invoice items table (dynamic update with the insertion of new items).
 
-* [ ] Espaço para input de observacoes para ocliente.
+* [ ] Space for inputting observations for the client.
 
-* [ ] Preview da datura.
+* [ ] Invoice preview.
 
-* [ ] Imprimir/download de pdf da fatura.
+* [ ] Print/download pdf of the invoice.
 
-* [ ] Envio de fatura para email do cliente.
+* [ ] Sending an invoice to the customer's email.
 
-* [ ] Autenticacao de usuarios.
+* [ ] User authentication.
 
 ### 2. Api
 
-* [ ] Persistencia de dados de utilizador e fatura.
+* [ ] Persistence of user and invoice data.
 
-* [ ] Autenticacao e autorização de users.
+* [ ] Authentication and authorization of users.
 
-* [ ] Consumir dados de uma api externa.
+* [ ] Consume data from external APIs.
 
-### 3. Aplicação Mobile
+### 3. Mobile Application
 
-* [ ] Formulario para inserir dados do utilizador(nome, email, endereço).
+* [ ] Form to insert user data (name, email, address).
 
-* [ ] Formulario para inserir dados da fatura(produto, quantidade, preço, imposto, total).
+* [ ] Form for entering invoice data (product, quantity, price, tax, total).
 
-* [ ] Tabela de items da fatura(atuaização dinamica com a inserção de novos items).
+* [ ] Invoice items table (dynamic update with the insertion of new items).
 
-* [ ] Espaço para input de observacoes para ocliente.
+* [ ] Space for inputting observations for the client.
 
-* [ ] Preview da datura.
+* [ ] Invoice preview.
 
-* [ ] Imprimir/download de pdf da fatura.
+* [ ] Print/download pdf of the invoice.
 
-* [ ] Envio de fatura para email do cliente.
+* [ ] Sending an invoice to the customer's email.
 
-* [ ] Autenticacao de usuarios.
+* [ ] User authentication.
 
 ### Extras
 
-* [ ] TDD? Acha que vale a tentativa?
+* [ ] TDD? Do you think it's worth the try?
 
-* [ ] Ja ouviu falar de microfrontends? Consegue colocar Vue e React a trabalharem lado a lado na mesma app?
+* [ ] Ever heard of microfrontends? Can you get Vue and React working side by side in the same app?
 
-* [ ] Clean architeture, consegue implementar as boas praticas defendidas pelo Uncle Bob?
+* [ ] Clean architecture, can you implement the good practices advocated by Uncle Bob?
 
-Sinta-se livre pra desenvolver sua solução da melhor maneira possível.
+Feel free to develop your solution as best you can.
 
-## Arquitetura esperada
+## Expected architecture
 
 1. Just don't overthink it.
 
 2. https://dev.to/nilanth/react-architecture-for-enterprise-application-3pnh
 
-## Submissão
+## Submission
 
-1. Certifique que tem acesso ao repositorio e comunique com sua equipa de desenvolvimento, tomem suas decisoes e construam o vosso melhor app de geração de faturas.
+1. Make sure you have access to the repository and communicate with your development team, make your decisions and build your best invoice generation app.
 
-2. Faça commits frequentes para o repositorio da equipa(não deixe para o ultimo dia para fazer um "push" do codigo, you know things happen).
+2. Make frequent commits to the team repository (don't leave it to the last day to "push" the code, you know things happen).
 
-3. Publique a aplicação web e api num provedor de cloud as sua escolha, para mobile escolha a melhor forma de publicação (se ja estiver nas lojas melhor ainda!).
+3. Publish the web application and api on a cloud provider of your choice, for mobile choose the best way to publish (if it's already in stores even better!).
 
-4. Nao espre até ao ultimo dia para reclamar com o "DevOps Engineer" da equipa para reclamar que a aplicacao nao esta a funcionar ou nao esta online.
+4. Don't wait until the last day to complain to the team's "DevOps Engineer" that the application isn't working or isn't online.
 
-5. Envie o link no canal da equipa.
+5. Submit the link on the team channel.
 ## Help Desk
 1. Google
 2. Stack Overflow
 3. Whatsapp group
 
-## Links de ajuda
+## Help links
 Layout 
 - https://invoicemaker.com/templates/design/material/
 
@@ -99,6 +99,6 @@ Flutter
 
 - https://flutter.dev/apprentice-giveaway
 
-## Até quando?
+## Until when?
 
-Até *Quinta-feira, 11 de novembro de 2021 (11/11/2021)*!
+Until *Thursday, November 11, 2021 (11/11/2021)*!

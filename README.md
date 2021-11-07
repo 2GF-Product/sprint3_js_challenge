@@ -1,24 +1,67 @@
 # Sprint 3 - JS challenge
-## Story: Hello ...
+## Story: Invoice APP...
 
-Introducao
+Uma app para gerar faturas, a api podera consumir dados de outras apis externas, comunica com um frontend web ou mobile interagindo com o utilizador que ira inserir dados como produto, quantidade, preço etc, e por ultimo a app tem a possibilidade de partilhar a fatura gerada com terceiros via partilha de um link https.
 
 ## Requisitos
+- Aplicacao web baseada em react ou Vue
+- Aplicacao mobile baseada em flutter
+- Hospedagem multicloud a seu criterio (Heroku, Versel, AWS, Cloudfare, Azure, GCP...), mas tera de sustentar sua escolha.
+- Documentação
+- Metodologia Scrum, quadro Kanban
 
 ### Funcionalidades
-1. Funcionalidade 1
+1. Aplicação Web
 
-* [ ] lista de features
+* [ ] Formulario para inserir dados do utilizador(nome, email, endereço).
 
-2. Funcionalidade 2
+* [ ] Formulario para inserir dados da fatura(produto, quantidade, preço, imposto, total).
 
-* [ ] lista de features
+* [ ] Tabela de items da fatura(atuaização dinamica com a inserção de novos items).
+
+* [ ] Espaço para input de observacoes para ocliente.
+
+* [ ] Preview da datura.
+
+* [ ] Imprimir/download de pdf da fatura.
+
+* [ ] Envio de fatura para email do cliente.
+
+* [ ] Autenticacao de usuarios.
+
+2. Api
+
+* [ ] Persistencia de dados de utilizador e fatura.
+
+* [ ] Autenticacao e autorização de users.
+
+* [ ] Consumir dados de uma api externa.
+
+3. Aplicação Mobile
+
+* [ ] Formulario para inserir dados do utilizador(nome, email, endereço).
+
+* [ ] Formulario para inserir dados da fatura(produto, quantidade, preço, imposto, total).
+
+* [ ] Tabela de items da fatura(atuaização dinamica com a inserção de novos items).
+
+* [ ] Espaço para input de observacoes para ocliente.
+
+* [ ] Preview da datura.
+
+* [ ] Imprimir/download de pdf da fatura.
+
+* [ ] Envio de fatura para email do cliente.
+
+* [ ] Autenticacao de usuarios.
 
 ### Extras
 
 * [ ] TDD será que rola? Acho que vale a tentativa!
 
-## Dicas
+* [ ] Ja ouviu falar de microfrontends? Consegue colocar Vue e React a trabalharem lado a lado na mesma app?
+
+* [ ] Clean architeture, consegue implementar as boas praticas defendidas pelo Uncle Bob?
 
 Sinta-se livre pra desenvolver sua solução da melhor maneira possível.
 
@@ -26,23 +69,31 @@ Sinta-se livre pra desenvolver sua solução da melhor maneira possível.
 
 Exemplo de arquitetura/estrutura
 
-### Checklist features
-
-- API
-  * [ ] Deve ter ...
-
-- Applicacao Web
-  * [ ] Deve ter ...
-
 ## Submissão
 
-1. 
+1. Certifique que tem acesso ao repositorio e comunique com sua equipa de desenvolvimento, tomem suas decisoes e construam o vosso melhor app de geração de faturas.
 
-2. 
+2. Faça commits frequentes para o repositorio da equipa(não deixe para o ultimo dia para fazer um "push" do codigo, you know things happen).
 
-3. 
+3. Publique a aplicação web e api num provedor de cloud as sua escolha, para mobile escolha a melhor forma de publicação (se ja estiver nas lojas melhor ainda!).
 
-4. Envie o link no canal da equipa.
+4. Nao espre até ao ultimo dia para reclamar com o "DevOps Engineer" da equipa para reclamar que a aplicacao nao esta a funcionar ou nao esta online.
+
+5. Envie o link no canal da equipa.
+## Help Desk
+1. Google
+2. Stack Overflow
+3. Whatsapp group
+
+## Links de ajuda
+Layout 
+- https://invoicemaker.com/templates/design/material/
+
+Api
+- https://erickwendel.teachable.com/p/node-js-para-iniciantes-nodebr
+
+Flutter
+- https://flutter.dev/apprentice-giveaway
 
 ## Até quando?
 

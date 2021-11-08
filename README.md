@@ -35,7 +35,7 @@
 
 * [ ] Authentication and authorization of users.
 
-* [ ] Consume data from external APIs.
+* [ ] Consume data from external APIs, a currency converter? An api that gives you the location written by the geographic coordinates? The choice is yours, be creative ;).
 
 ### 3. Mobile Application
 

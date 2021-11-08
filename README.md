@@ -101,4 +101,4 @@ Flutter
 
 ## Until when?
 
-Until *Thursday, November 12, 2021 (11/11/2021)*!
+Until *Friday, November 12, 2021 (11/11/2021)*!

@@ -1,0 +1,27 @@
+{
+  "name": "invoice_api",
+  "version": "1.0.0",
+  "description": "An app to generate invoices, the api should consume data from other external apis, communicate with a web frontend, and even a mobile version interacting with the user who will enter data such as product, quantity, price etc, and finally the app has the possibility to share the generated invoice with third parties via sharing an https link",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "*",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "*",
+    "nodemon": "^2.0.14"
+  },
+  "scripts": {
+    "start": "nodemon ./src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2GF-Product/sprint3_js_challenge.git"
+  },
+  "author": "Luis Miguel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2GF-Product/sprint3_js_challenge/issues"
+  },
+  "homepage": "https://github.com/2GF-Product/sprint3_js_challenge#readme"
+}

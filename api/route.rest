@@ -1,0 +1,55 @@
+   
+     PATCH http://localhost:3001/user/618aab386dede23debd81eae  
+  
+   
+    { 
+      "name":"luisBarbosca"
+  
+    }
+
+
+
+ GET  http://localhost:3001/user 
+   
+   
+   
+  
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+    
+    
+
+ DELETE  http://localhost:3001/user/618aab336dede23debd81eac
+
+
+
+ ###
+
+
+  
+  POST http://localhost:3001/user  
+  Content-Type: application/json
+
+  { 
+    "name":"luis",
+    "email":"sdsdvs",
+    "address":"sdssdvvf"
+  }
+ 
+ ###
+ 
+
+
+ ###

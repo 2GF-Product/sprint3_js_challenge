@@ -19,11 +19,12 @@ router.get('/:id', getUser, (req, res) => {
 
 // Creating one
 router.post('/', async (req, res) => {
-  const user= new User({
+  console.log(req.body)
+  const user = new User({
     name: req.body.name,
-    email: req.body.name,
-    address: req.body.address 
-   
+    email: req.body.email,
+    address: req.body.address
+
   })
   try {
     const newUser = await user.save()
@@ -35,18 +36,22 @@ router.post('/', async (req, res) => {
 
 // Updating One
 router.patch('/:id', getUser, async (req, res) => {
+  console.log(req.body)
   if (req.body.name != null) {
     res.user.name = req.body.name
+    console.log(req.body.name)
   }
   if (req.body.email != null) {
     res.user.email = req.body.email
   }
-   if (req.body.address != null) {
+
+  if (req.body.address != null) {
     res.user.address = req.body.address
   }
   try {
     const updatedUser = await res.user.save()
     res.json(updatedUser)
+    console.log("updated")
   } catch (err) {
     res.status(400).json({ message: err.message })
   }
@@ -56,7 +61,7 @@ router.patch('/:id', getUser, async (req, res) => {
 router.delete('/:id', getUser, async (req, res) => {
   try {
     await res.user.remove()
-    res.json({ message: 'Deleted Subscriber' })
+    res.json({ message: 'Deleted user' })
   } catch (err) {
     res.status(500).json({ message: err.message })
   }
@@ -74,7 +79,11 @@ async function getUser(req, res, next) {
   }
 
   res.user = user
+ 
   next()
+  
 }
+
+
 
 module.exports = router

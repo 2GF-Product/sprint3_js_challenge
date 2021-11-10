@@ -3,33 +3,32 @@ const mongoose = require('mongoose')
 const invoiceSchema = new mongoose.Schema({
     date: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now
     },
     invoiceNO: {
         type: Number,
         unique: true,
-        required: false
+        required: true
     },
-    products: [
-        {
-            description: {
-                type: String,
-                required: true
-            },
-            quantity: {
-                type: Number,
-                required: true
-            },
-            unitPrice: {
-                type: Number,
-                required: true
-            },
-            amount: {
-                type: Number,
-                required: false
-            }
+    products: {
+        description: {
+            type: String,
+            required: true
+        },
+        quantity: {
+            type: Number,
+            required: true
+        },
+        unitPrice: {
+            type: Number,
+            required: true
+        },
+        amount: {
+            type: Number,
+            required: true
         }
-    ],
+    },
     subtotal: {
         type: Number,
         default: v => {
@@ -43,10 +42,12 @@ const invoiceSchema = new mongoose.Schema({
     },
     tax: {
         type: Number,
-        required: true
+        default: 1,
+        required: false
     },
     discount: {
         type: Number,
+        default: 0,
         required: false
     },
     total: {
@@ -61,4 +62,4 @@ const invoiceSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('invoiceSchema', invoioceSchema)
+module.exports = mongoose.model('invoiceSchema', invoiceSchema)

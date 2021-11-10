@@ -18,7 +18,7 @@ const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
 const invoiceRouter = require('./routes/invoice')
-app.use('/invoice', userInvoice)
+app.use('/invoice', invoiceRouter)
 
 app.listen(3001, function() {
   console.log('Servidor inicializado na porta 3001');

@@ -17,6 +17,9 @@ app.use(express.json())
 const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
+const invoiceRouter = require('./routes/invoice')
+app.use('/invoice', userInvoice)
+
 app.listen(3001, function() {
   console.log('Servidor inicializado na porta 3001');
 }) 

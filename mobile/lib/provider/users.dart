@@ -38,6 +38,12 @@ class Users with ChangeNotifier {
                 name: user.name,
                 email: user.email,
                 avatarUrl: user.avatarUrl,
+                address : user.address,
+                Product: user.Product,
+                Quantity: user.Quantity,
+                Price: user.Price,
+                Tax: user.Tax,
+                Total: user.Total,
               ));
     }
 

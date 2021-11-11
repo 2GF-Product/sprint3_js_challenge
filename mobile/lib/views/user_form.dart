@@ -20,6 +20,7 @@ class _UserFormState extends State<UserForm> {
       _formData['name'] = user.name;
       _formData['email'] = user.email;
       _formData['avatarUrl'] = user.avatarUrl;
+      _formData['address']= user.address;
     }
   }
 
@@ -35,7 +36,7 @@ class _UserFormState extends State<UserForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Formulário de Usuário'),
+        title: Text('Enter invoice and user data '),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
@@ -50,6 +51,7 @@ class _UserFormState extends State<UserForm> {
                     name: _formData['name'],
                     email: _formData['email'],
                     avatarUrl: _formData['avatarUrl'],
+                    address: _formData['address'],
                   ),
                 );
                 Navigator.of(context).pop();
@@ -83,11 +85,36 @@ class _UserFormState extends State<UserForm> {
                 decoration: InputDecoration(labelText: 'E-mail'),
                 onSaved: (value) => _formData['email'] = value,
               ),
-              TextFormField(
-                initialValue: _formData['avatarUrl'],
-                decoration: InputDecoration(labelText: 'Url do avatar'),
-                onSaved: (value) => _formData['avatarUrl'] = value,
+            TextFormField(
+              initialValue:_formData['address'],
+              decoration: InputDecoration(labelText:'address'),
+              onSaved: (value) => _formData['address'] = value,
               ),
+          TextFormField(
+            initialValue:_formData['Product'],
+            decoration: InputDecoration(labelText:'Product'),
+            onSaved: (value) => _formData['Product'] = value,
+          ),
+          TextFormField(
+          initialValue:_formData['Quantity'],
+          decoration: InputDecoration(labelText:'Quantity'),
+          onSaved: (value) => _formData['Quantity'] = value,
+          ),
+          TextFormField(
+          initialValue:_formData['Price'],
+          decoration: InputDecoration(labelText:'Price'),
+          onSaved: (value) => _formData['Price'] = value,
+          ),
+          TextFormField(
+            initialValue:_formData['Tax'],
+            decoration: InputDecoration(labelText:'Tax'),
+            onSaved: (value) => _formData['Tax'] = value,
+          ),
+          TextFormField(
+            initialValue:_formData['Total'],
+            decoration: InputDecoration(labelText:'Total'),
+            onSaved: (value) => _formData['Total'] = value,
+          )
             ],
           ),
         ),

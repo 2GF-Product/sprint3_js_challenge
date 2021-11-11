@@ -11,7 +11,7 @@ class UserList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('insert user data'),
+        title: Text('Insert user data'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -23,9 +23,34 @@ class UserList extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(
-          itemCount: users.count,
-          itemBuilder: (ctx, i) => UserTile(users.byIndex(i))),
+      body: Column(children: [
+        Expanded(
+          child: Container(
+
+            child: ListView.builder(
+                itemCount: users.count,
+                itemBuilder: (ctx, i) => UserTile(users.byIndex(i))),
+          ),
+        ),
+        Container(
+          height: 60,
+          width: MediaQuery.of(context).size.width ,
+          child: ElevatedButton.icon(
+
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                AppRoutes.USER_FORM,
+              );
+              // Respond to button press
+            },
+            icon: Icon(Icons.add, size: 18),
+            label: Text("Create Invoice"),
+          ),
+        ),
+
+
+        ],)
+
     );
   }
 }

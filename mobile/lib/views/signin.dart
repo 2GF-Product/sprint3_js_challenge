@@ -66,18 +66,18 @@ class _SignInState extends State<SignIn> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Center(
+                 /* Center(
                       child: Image.asset(
                     "assets/logo.png",
                     height: 30,
                     width: 30,
                     alignment: Alignment.center,
-                  )),
+                  )),*/
                   SizedBox(
                     height: 13,
                   ),
                   Text(
-                    "",
+                    "Welcome",
                     style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                             fontSize: 27,
@@ -90,7 +90,7 @@ class _SignInState extends State<SignIn> {
                   Container(
                     width: 180,
                     child: Text(
-                      "Invoice Generator",
+                      "Invoice Generator app",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: TextStyle(
@@ -100,7 +100,7 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                   ),
-                  SizedBox(
+/*                  SizedBox(
                     height: 40,
                   ),
                   Text(
@@ -135,7 +135,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   SizedBox(
                     height: 30,
-                  ),
+                  ),*/
                   Form(
                     key: _formKey,
                     child: Container(
@@ -211,7 +211,7 @@ class _SignInState extends State<SignIn> {
                                     borderRadius: BorderRadius.circular(50),
                                   ),
                                   child: Text(
-                                    "SUBMIT",
+                                    "LOGIN",
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.roboto(
                                         textStyle: TextStyle(
@@ -233,19 +233,19 @@ class _SignInState extends State<SignIn> {
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
+  /*                Text(
                     "OR",
                     style: TextStyle(fontSize: 14, color: Colors.white60),
-                  ),
+                  ),*/
                   SizedBox(
                     height: 20,
                   ),
-                  Image.asset(
+                 /* Image.asset(
                     "assets/fingerprint.png",
                     height: 36,
                     width: 36,
-                  ),
-                  SizedBox(
+                  ),*/
+              /*    SizedBox(
                     height: 30,
                   ),
                   GestureDetector(
@@ -261,7 +261,7 @@ class _SignInState extends State<SignIn> {
                               decoration: TextDecoration.underline,
                               letterSpacing: 0.5)),
                     ),
-                  )
+                  )*/
                 ],
               ),
             ),
@@ -277,16 +277,17 @@ class _SignInState extends State<SignIn> {
       'password': password
     };
     print(data.toString());
-    final  response= await http.post(
-       Uri.parse(''),
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
 
-        body: data,
-        encoding: Encoding.getByName("utf-8")
-    )  ;
+    final response = await http
+        .post(Uri.parse('https://localhost:3001/auth/login'),
+      headers: <String, String>{
+        'content-type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'email': email,
+        'passe': password
+      }),
+    );
     setState(() {
       isLoading=false;
     });
@@ -320,7 +321,16 @@ class _SignInState extends State<SignIn> {
   }
   Future<User> fetchUser() async{
     final response = await http
-        .post(Uri.parse('https://localhost:3001'));
+        .post(Uri.parse('https://invoice-challenge-api.herokuapp.com/auth/login'),
+    headers: <String, String>{
+          'content-type': 'application/json; charset=UTF-8',
+    },
+      body: jsonEncode(<String, String>{
+        'email': email,
+        'passe': password
+      }),
+    );
+
     if (response.statusCode == 200){
       //if the server did return a 200 ok status, then parse the jason
       return User.fromJson(jsonDecode(response.body));

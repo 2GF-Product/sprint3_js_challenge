@@ -1,8 +1,12 @@
-import React, { Component } from "react";
+import React  from "react";
+import {  Link } from "react-router-dom";
 
-export default class SignUp extends Component {
-    render() {
-        return (
+const SignUp = () => {
+
+  
+    return (
+        
+
             <form>
                 <h3>Sign Up</h3>
 
@@ -28,9 +32,14 @@ export default class SignUp extends Component {
 
                 <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                 <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
+                    Already registered
+                    <Link className="ml-2" to="/sign-in">sign in?</Link>
                 </p>
             </form>
-        );
-    }
+        
+    );
+
+ 
 }
+
+export default SignUp;

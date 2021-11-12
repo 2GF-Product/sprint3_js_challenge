@@ -15,7 +15,12 @@ db.once('open', () => console.log('Connected to Database'))
 
 app.use(express.json())
 const userRouter = require('./routes/user')
+const userInvoice = require('./routes/invoice')
+const userAuth = require('./routes/auth')
+
 app.use('/user', userRouter)
+app.use('/invoice', userInvoice)
+app.use('/auth', userAuth)
 
 app.listen(3001, function() {
   console.log('Servidor inicializado na porta 3001');

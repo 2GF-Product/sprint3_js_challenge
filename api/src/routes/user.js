@@ -20,12 +20,20 @@ router.get('/:id', getUser, (req, res) => {
 // Creating one
 router.post('/', async (req, res) => {
   console.log(req.body)
+  let getUser
+  getUser = await User.findOne({email:req.body.email})
+
+  if(getUser!=null)
+  {
+   return res.status(400).json({ message:"email duplicated email"} )
+  }
   const user = new User({
     name: req.body.name,
     email: req.body.email,
     address: req.body.address,
-    password:req.body.password
+    passe: req.body.passe
   })
+
   try {
     const newUser = await user.save()
     res.status(201).json(newUser)
@@ -44,8 +52,8 @@ router.patch('/:id', getUser, async (req, res) => {
   if (req.body.email != null) {
     res.user.email = req.body.email
   }
-  if (req.body.password != null) {
-    res.user.password = req.body.password
+  if (req.body.passe != null) {
+    res.user.passe = req.body.passe
   }
   if (req.body.address != null) {
     res.user.address = req.body.address
@@ -72,7 +80,9 @@ router.delete('/:id', getUser, async (req, res) => {
 async function getUser(req, res, next) {
   let user
   try {
+
     user = await User.findById(req.params.id)
+   
     if (user == null) {
       return res.status(404).json({ message: 'Cannot find user' })
     }
@@ -81,9 +91,9 @@ async function getUser(req, res, next) {
   }
 
   res.user = user
- 
+
   next()
-  
+
 }
 
 

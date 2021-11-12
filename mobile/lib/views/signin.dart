@@ -55,7 +55,7 @@ class _SignInState extends State<SignIn> {
                     height: 13,
                   ),
                   Text(
-                    "Learn With Us",
+                    "",
                     style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                             fontSize: 27,
@@ -99,7 +99,7 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Learn new Technologies 😋",
+                        "😋",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.roboto(
                           textStyle: TextStyle(

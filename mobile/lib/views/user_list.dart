@@ -1,3 +1,5 @@
+import 'package:flutterCrudUser/data/dummy_users.dart';
+import 'package:flutterCrudUser/models/user.dart';
 import 'package:flutterCrudUser/provider/users.dart';
 import 'package:flutterCrudUser/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +9,7 @@ import 'package:provider/provider.dart';
 class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //final Users users = Provider.of(context);
+    final Map<String, User> users = DUMMY_USERS;
 
     return Scaffold(
       appBar: AppBar(
@@ -24,14 +26,15 @@ class UserList extends StatelessWidget {
         ],
       ),
       body: Column(children: [
-        /*Expanded(
+        Expanded(
           child: Container(
 
             child: ListView.builder(
-                itemCount: 1, //users.count,
-                itemBuilder: (ctx, i) => UserTile(users.byIndex(i))),
+                itemCount: users.length,
+                itemBuilder: (ctx, i) => Text(''),
           ),
-        ),*/
+        ),
+        ),
         Container(
           height: 60,
           width: MediaQuery.of(context).size.width ,

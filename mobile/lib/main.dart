@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.USER_FORM: (_) => UserForm(),
         AppRoutes.SIGNIN: (_) => SignIn(),
         AppRoutes.SIGNUP: (_) => SignUp(),
+        AppRoutes.USER_LIST: (_) => UserList()
       },
     );
   }

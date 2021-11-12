@@ -14,7 +14,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  late Future<User> futureUser;
+ // late Future<User> futureUser;
 
   final _formKey = GlobalKey<FormState>();
   late String email, password;
@@ -26,7 +26,7 @@ class _SignInState extends State<SignIn> {
   @override
   void initState() {
     super.initState();
-    futureUser = fetchUser();
+   // futureUser = fetchUser();
   }
 
   @override
@@ -40,7 +40,7 @@ class _SignInState extends State<SignIn> {
         child: Stack(
           children: <Widget>[
 
-            FutureBuilder<User>(
+            /*FutureBuilder<User>(
             future: futureUser,
             builder: (context, snapshot){
             if (snapshot.hasData){
@@ -51,7 +51,7 @@ class _SignInState extends State<SignIn> {
 
             return const CircularProgressIndicator();
             },
-        ),
+        ),*/
 
             Container(
               width: double.infinity,
@@ -185,6 +185,7 @@ class _SignInState extends State<SignIn> {
                             children: [
                               GestureDetector(
                                 onTap: () {
+                                  Navigator.pushReplacementNamed(context, "/user_list");
                                   if(isLoading)
                                     {
                                       return;
@@ -319,7 +320,7 @@ class _SignInState extends State<SignIn> {
       preferences.commit();
 
   }
-  Future<User> fetchUser() async{
+  /*Future<User> fetchUser() async{
     final response = await http
         .post(Uri.parse('https://invoice-challenge-api.herokuapp.com/auth/login'),
     headers: <String, String>{
@@ -333,12 +334,13 @@ class _SignInState extends State<SignIn> {
 
     if (response.statusCode == 200){
       //if the server did return a 200 ok status, then parse the jason
-      return User.fromJson(jsonDecode(response.body));
+      //return User.fromJson(jsonDecode(response.body));
+      return null;
     }else{
       throw Exception('User not Found');
-    }
+    }*/
   }
 
 
 
-}
+

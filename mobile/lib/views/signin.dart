@@ -3,8 +3,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rest_app/apis/api.dart';
-import 'package:rest_app/screens/signup.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -260,7 +258,7 @@ class _SignInState extends State<SignIn> {
     };
     print(data.toString());
     final  response= await http.post(
-       Uri.parse(LOGIN),
+       Uri.parse(''),
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/x-www-form-urlencoded"

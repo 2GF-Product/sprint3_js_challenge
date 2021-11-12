@@ -35,7 +35,7 @@ bool isLoading=false;
       ),
       body: Stack(
         children: [
-          WebView(
+          /*WebView(
             javascriptMode: JavascriptMode.unrestricted,
             initialUrl: 'https://rrtutors.com/language/Flutter',
             onPageFinished:(value){
@@ -45,7 +45,7 @@ bool isLoading=false;
 
             },
 
-          ),
+          ),*/
           (!isLoading)?Center(
             child: CircularProgressIndicator(
               backgroundColor: Colors.green,

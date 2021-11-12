@@ -320,7 +320,7 @@ class _SignInState extends State<SignIn> {
   }
   Future<User> fetchUser() async{
     final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+        .post(Uri.parse('https://localhost:3001'));
     if (response.statusCode == 200){
       //if the server did return a 200 ok status, then parse the jason
       return User.fromJson(jsonDecode(response.body));

@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default class Login extends Component {
-    render() {
+
+        const SignIn = () => {
         return (
-            <form>
+          
+            <form > 
                 <h3>Sign In</h3>
 
                 <div className="form-group">
@@ -18,16 +20,22 @@ export default class Login extends Component {
 
                 <div className="form-group">
                     <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                       {/*  <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Rememberme</label>
+                         */}
+              
                     </div>
+                
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
-                </p>
+        
+                
+                 <div class="text-center mt-2">Already have an account?  <Link className="" to="/sign-up">Sign up here</Link></div> 
+                 
             </form>
+        
         );
     }
-}
+
+    export default SignIn;

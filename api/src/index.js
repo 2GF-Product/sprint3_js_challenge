@@ -6,16 +6,29 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
-
-
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 
+
+ /* const MongoClient = require('mongodb').MongoClient;
+
+const client = new MongoClient(process.env.DATABASE_URL, { useNewUrlParser: true });
+client.connect(err => {
+  const options = {w:"majority", readConcern: {level: "majority"}};
+  const db = client.db("test", options);
+});  */
+
+
 app.use(express.json())
 const userRouter = require('./routes/user')
+const userInvoice = require('./routes/invoice')
+const userAuth = require('./routes/auth')
+
 app.use('/user', userRouter)
+app.use('/invoice', userInvoice)
+app.use('/auth', userAuth)
 
 app.listen(3001, function() {
   console.log('Servidor inicializado na porta 3001');

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutterCrudUser/models/user.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,12 +14,21 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  late Future<User> futureUser;
+
   final _formKey = GlobalKey<FormState>();
   String email, password;
   bool isLoading=false;
   TextEditingController _emailController=new TextEditingController();
   TextEditingController _passwordController=new TextEditingController();
   GlobalKey<ScaffoldState>_scaffoldKey=GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+    futureUser = fetchUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -247,11 +257,7 @@ class _SignInState extends State<SignIn> {
     ));
   }
 
-  login(email,password) async
-  {
-
-
-
+  login(email,password) async {
     Map data = {
       'email': email,
       'password': password
@@ -263,7 +269,6 @@ class _SignInState extends State<SignIn> {
           "Accept": "application/json",
           "Content-Type": "application/x-www-form-urlencoded"
         },
-
 
         body: data,
         encoding: Encoding.getByName("utf-8")
@@ -287,9 +292,8 @@ class _SignInState extends State<SignIn> {
     } else {
       _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please try again!")));
     }
-
-
   }
+
   savePref(int value, String name, String email, int id) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 
@@ -300,4 +304,17 @@ class _SignInState extends State<SignIn> {
       preferences.commit();
 
   }
+  Future<User> fetchUser() async{
+    final response = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+    if (response.statusCode == 200){
+      //if the server did return a 200 ok status, then parse the jason
+      return User.fromJson(jsonDecode(response.body));
+    }else{
+      throw Exception('User not Found');
+    }
+  }
+
+
+
 }

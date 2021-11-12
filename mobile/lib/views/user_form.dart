@@ -19,7 +19,6 @@ class _UserFormState extends State<UserForm> {
       _formData['id'] = user.id;
       _formData['name'] = user.name;
       _formData['email'] = user.email;
-      _formData['avatarUrl'] = user.avatarUrl;
       _formData['address']= user.address;
     }
   }
@@ -50,7 +49,6 @@ class _UserFormState extends State<UserForm> {
                     id: _formData['id'],
                     name: _formData['name'],
                     email: _formData['email'],
-                    avatarUrl: _formData['avatarUrl'],
                     address: _formData['address'],
                   ),
                 );

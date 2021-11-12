@@ -1,3 +1,4 @@
+/*
 import 'package:flutterCrudUser/models/user.dart';
 
 const DUMMY_USERS = {
@@ -38,3 +39,4 @@ const DUMMY_USERS = {
       id: '5', name: 'Dart', email: 'dart@email.com', address: 'rua5', Product: 'eee', Quantity: '1' ,
       avatarUrl: null),
 };
+*/

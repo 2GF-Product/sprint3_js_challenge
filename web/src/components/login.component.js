@@ -6,6 +6,8 @@ const Login = () => {
 
     const [users, setUsers] = useState([]);
     const [values, setValues] = useState([]);
+    const [email, setEmail] = useState([]);
+    const [password, setPassword] = useState([]);
 
     
     const getUsers = async() => {
@@ -13,14 +15,20 @@ const Login = () => {
         console.log(res)
         setUsers(res.data);
     };
-    getUsers()
     
     function onChange(event) {
-        const {value, name} = event.target
-        setValues({
-            ...values,
-            [name]: value,
-        });
+        setEmail(event.target.email)
+        setPassword(event.target.password)
+        console.log(setEmail)
+        console.log(setPassword)
+        // setValues({
+        //     ...values,
+        //     [name]: value,
+        // });
+    }
+
+    function login() {
+        getUsers()
     }
     
    
@@ -46,7 +54,7 @@ const Login = () => {
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">Submit</button>
+            <button type="submit" className="btn btn-primary btn-block" onClick={login}>Submit</button>
             <p className="forgot-password text-right">
                 Forgot <a href="#">password?</a>
             </p>

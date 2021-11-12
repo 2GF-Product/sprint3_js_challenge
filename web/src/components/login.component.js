@@ -1,50 +1,55 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from 'axios'
+import { stripBasename } from "history/PathUtils";
 
 
 const Login = () => {
 
+    function login(e) {
+        e.preventDefault()
+        console.log(email)
+        console.log(password)
+    }
+
     const [users, setUsers] = useState([]);
-    const [values, setValues] = useState([]);
-    const [email, setEmail] = useState([]);
-    const [password, setPassword] = useState([]);
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
     
-    const getUsers = async() => {
-        const res = await axios.get(`http://localhost:3001/user`)
+    const validaUser = async() => {
+        const res = await axios.get(`http://localhost:3001/user`, {params: {email: setEmail, password: setPassword}})
+        .then(response=>{
+            return response.data
+        })
+        .then(response=>{
+            if(response.length>0){
+                var resposta=response[0]
+                console.log(resposta)
+            }else{
+                alert('User o password incorrect')
+            }
+        })
         console.log(res)
-        setUsers(res.data);
+        // setUsers(response.data);
+        console.log(setUsers)
     };
     
-    function onChange(event) {
-        setEmail(event.target.email)
-        setPassword(event.target.password)
-        console.log(setEmail)
-        console.log(setPassword)
-        // setValues({
-        //     ...values,
-        //     [name]: value,
-        // });
-    }
-
-    function login() {
-        getUsers()
-    }
+     
     
    
     return (
 
-        <form>
+        <form onSubmit={login}>
             <h3>Sign In</h3>
             
             <div className="form-group">
                 <label>Email address</label>
-                <input type="email" className="form-control" placeholder="Enter email" onChange={onChange} values={values.email}/>
+                <input type="email" className="form-control" name="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
             </div>
 
             <div className="form-group">
                 <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" onChange={onChange} values={values.password} />
+                <input type="password" className="form-control" name="password" placeholder="Enter password" onChange={(e) =>setPassword(e.target.value)} />
             </div>
 
             <div className="form-group">
@@ -54,7 +59,7 @@ const Login = () => {
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block" onClick={login}>Submit</button>
+            <button type="submit" className="btn btn-primary btn-block" onClick={validaUser}>Submit</button>
             <p className="forgot-password text-right">
                 Forgot <a href="#">password?</a>
             </p>

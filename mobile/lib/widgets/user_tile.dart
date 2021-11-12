@@ -11,11 +11,11 @@ class UserTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
-        ? CircleAvatar(child: Icon(Icons.person))
-        : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
+    //final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
+       // ? CircleAvatar(child: Icon(Icons.person))
+       // : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
     return ListTile(
-      leading: avatar,
+     // leading: avatar,
       title: Text(user.name),
       subtitle: Text(user.email),
       trailing: Container(
@@ -54,7 +54,7 @@ class UserTile extends StatelessWidget {
                   ),
                 ).then((confirmed) {
                   if (confirmed) {
-                    Provider.of<Users>(context, listen: false).remove(user);
+                   // Provider.of<Users>(context, listen: false).remove(user);
                   }
                 });
               },

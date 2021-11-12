@@ -15,7 +15,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
-  String name,email, password;
+  late String name,email, password;
   bool isLoading=false;
   GlobalKey<ScaffoldState>_scaffoldKey=GlobalKey();
   var reg=RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
@@ -70,7 +70,7 @@ class _SignUpState extends State<SignUp> {
                   Container(
                     width: 180,
                     child: Text(
-                      "RRTutors, Hyderabad",
+                      "Invoice Generator",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: TextStyle(
@@ -101,7 +101,7 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "😋",
+                        "✅",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.roboto(
                           textStyle: TextStyle(
@@ -138,7 +138,7 @@ class _SignUpState extends State<SignUp> {
                                   color: Colors.white70, fontSize: 15),
                             ),
                             onSaved: (val) {
-                              name = val;
+                              name = val as String;
                             },
                           ),
                           SizedBox(
@@ -159,7 +159,7 @@ class _SignUpState extends State<SignUp> {
                                   color: Colors.white70, fontSize: 15),
                             ),
                             onSaved: (val) {
-                              email = val;
+                              email = val as String;
                             },
                           ),
                           SizedBox(
@@ -178,7 +178,7 @@ class _SignUpState extends State<SignUp> {
                                   color: Colors.white70, fontSize: 15),
                             ),
                             onSaved: (val) {
-                              password = val;
+                              password = val as String;
                             },
                           ),
                           SizedBox(
@@ -204,17 +204,17 @@ class _SignUpState extends State<SignUp> {
                                     }
                                     if(_nameController.text.isEmpty)
                                     {
-                                      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please Enter Name")));
+                                      //_scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please Enter Name")));
                                       return;
                                     }
                                     if(!reg.hasMatch(_emailController.text))
                                     {
-                                      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Enter Valid Email")));
+                                     // _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Enter Valid Email")));
                                       return;
                                     }
                                     if(_passwordController.text.isEmpty||_passwordController.text.length<6)
                                     {
-                                      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Password should be min 6 characters")));
+                                     // _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Password should be min 6 characters")));
                                       return;
                                     }
                                     signup(_nameController.text,_emailController.text,_passwordController.text);
@@ -304,10 +304,10 @@ class _SignUpState extends State<SignUp> {
         }else{
         print(" ${resposne['message']}");
       }
-      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("${resposne['message']}")));
+    //  _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("${resposne['message']}")));
 
     } else {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please Try again")));
+     // _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please Try again")));
     }
 
   }

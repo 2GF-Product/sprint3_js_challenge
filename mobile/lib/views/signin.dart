@@ -17,7 +17,7 @@ class _SignInState extends State<SignIn> {
   late Future<User> futureUser;
 
   final _formKey = GlobalKey<FormState>();
-  String email, password;
+  late String email, password;
   bool isLoading=false;
   TextEditingController _emailController=new TextEditingController();
   TextEditingController _passwordController=new TextEditingController();
@@ -39,6 +39,20 @@ class _SignInState extends State<SignIn> {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: <Widget>[
+
+            FutureBuilder<User>(
+            future: futureUser,
+            builder: (context, snapshot){
+            if (snapshot.hasData){
+              return  Text(snapshot.data!.name);
+            }else if (snapshot.hasError){
+              return Text('${snapshot.error}');
+            }
+
+            return const CircularProgressIndicator();
+            },
+        ),
+
             Container(
               width: double.infinity,
               height: double.infinity,
@@ -76,7 +90,7 @@ class _SignInState extends State<SignIn> {
                   Container(
                     width: 180,
                     child: Text(
-                      "RRTutors, Hyderabad",
+                      "Invoice Generator",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: TextStyle(
@@ -107,7 +121,7 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "😋",
+                        "✅",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.roboto(
                           textStyle: TextStyle(
@@ -142,7 +156,7 @@ class _SignInState extends State<SignIn> {
                                   color: Colors.white70, fontSize: 15),
                             ),
                             onSaved: (val) {
-                              email = val;
+                              email = val as String;
                             },
                           ),
                           SizedBox(
@@ -161,7 +175,7 @@ class _SignInState extends State<SignIn> {
                                   color: Colors.white70, fontSize: 15),
                             ),
                             onSaved: (val) {
-                              email = val;
+                              email = val as String;
                             },
                           ),
                           SizedBox(
@@ -177,7 +191,7 @@ class _SignInState extends State<SignIn> {
                                     }
                                   if(_emailController.text.isEmpty||_passwordController.text.isEmpty)
                                   {
-                                    _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please Fill all fileds")));
+                                  //  _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please Fill all fileds")));
                                     return;
                                   }
                                   login(_emailController.text,_passwordController.text);
@@ -287,10 +301,10 @@ class _SignInState extends State<SignIn> {
       }else{
         print(" ${resposne['message']}");
       }
-      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("${resposne['message']}")));
+    //  _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("${resposne['message']}")));
 
     } else {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please try again!")));
+    //  _scaffoldKey.currentState.showSnackBar(SnackBar(content:Text("Please try again!")));
     }
   }
 

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Users users = Provider.of(context);
+    //final Users users = Provider.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -24,14 +24,14 @@ class UserList extends StatelessWidget {
         ],
       ),
       body: Column(children: [
-        Expanded(
+        /*Expanded(
           child: Container(
 
             child: ListView.builder(
-                itemCount: users.count,
+                itemCount: 1, //users.count,
                 itemBuilder: (ctx, i) => UserTile(users.byIndex(i))),
           ),
-        ),
+        ),*/
         Container(
           height: 60,
           width: MediaQuery.of(context).size.width ,

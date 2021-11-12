@@ -1,3 +1,4 @@
+/*
 import 'dart:math';
 
 import 'package:flutterCrudUser/data/dummy_users.dart';
@@ -34,16 +35,18 @@ class Users with ChangeNotifier {
       _items.putIfAbsent(
           id,
           () => User(
-                id: id,
+                id: user.id,
                 name: user.name,
-                email: user.email,
-                avatarUrl: user.avatarUrl,
+                email: user.email
+                */
+/*avatarUrl: user.avatarUrl,
                 address : user.address,
                 Product: user.Product,
                 Quantity: user.Quantity,
                 Price: user.Price,
                 Tax: user.Tax,
-                Total: user.Total,
+                Total: user.Total,*//*
+
               ));
     }
 
@@ -57,3 +60,4 @@ class Users with ChangeNotifier {
     }
   }
 }
+*/

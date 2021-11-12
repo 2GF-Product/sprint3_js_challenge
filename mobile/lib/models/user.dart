@@ -12,9 +12,9 @@ class User {
   final double total;*/
 
   User({
-    @required this.id,
-    @required this.name,
-    @required this.email
+    required this.id,
+    required this.name,
+    required this.email
 
     /*@required this.address,
     @required this.product,

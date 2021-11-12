@@ -16,22 +16,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => Users(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Invoice App',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        routes: {
-          AppRoutes.HOME: (_) => SignIn(),
-          AppRoutes.USER_FORM: (_) => UserForm(),
-          AppRoutes.SIGNIN: (_) => SignIn(),
-          AppRoutes.SIGNUP: (_) => SignUp(),
-        },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Invoice App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      routes: {
+        AppRoutes.HOME: (_) => SignIn(),
+        AppRoutes.USER_FORM: (_) => UserForm(),
+        AppRoutes.SIGNIN: (_) => SignIn(),
+        AppRoutes.SIGNUP: (_) => SignUp(),
+      },
     );
   }
 }

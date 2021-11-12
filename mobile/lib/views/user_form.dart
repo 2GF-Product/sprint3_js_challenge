@@ -16,10 +16,10 @@ class _UserFormState extends State<UserForm> {
 
   void _loadFormData(User user) {
     if (user != null) {
-      _formData['id'] = user.id;
+      _formData['id'] = user.id as String;
       _formData['name'] = user.name;
       _formData['email'] = user.email;
-      _formData['address']= user.address;
+
     }
   }
 
@@ -27,8 +27,8 @@ class _UserFormState extends State<UserForm> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    final User user = ModalRoute.of(context).settings.arguments;
-    _loadFormData(user);
+    //final User user = ModalRoute.of(context).settings.arguments;
+    //_loadFormData(user);
   }
 
   @override
@@ -39,22 +39,23 @@ class _UserFormState extends State<UserForm> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
-            onPressed: () {
+            onPressed:() {},
+/*            onPressed: () {
               final isValid = _form.currentState.validate();
 
               if (isValid) {
                 _form.currentState.save();
                 Provider.of<Users>(context, listen: false).put(
                   User(
-                    id: _formData['id'],
-                    name: _formData['name'],
-                    email: _formData['email'],
-                    address: _formData['address'],
+                    id: _formData!['id'] as int,
+                    name: _formData['name'] as String,
+                    email: _formData['email'] as String
+
                   ),
                 );
                 Navigator.of(context).pop();
               }
-            },
+            },*/
           ),
         ],
       ),
@@ -76,42 +77,42 @@ class _UserFormState extends State<UserForm> {
                   }
                   return null;
                 },
-                onSaved: (value) => _formData['name'] = value,
+                onSaved: (value) => _formData['name'] = value!,
               ),
               TextFormField(
                 initialValue: _formData['email'],
                 decoration: InputDecoration(labelText: 'E-mail'),
-                onSaved: (value) => _formData['email'] = value,
+                onSaved: (value) => _formData['email'] = value!,
               ),
             TextFormField(
               initialValue:_formData['address'],
               decoration: InputDecoration(labelText:'address'),
-              onSaved: (value) => _formData['address'] = value,
+              onSaved: (value) => _formData['address'] = value!,
               ),
           TextFormField(
             initialValue:_formData['Product'],
             decoration: InputDecoration(labelText:'Product'),
-            onSaved: (value) => _formData['Product'] = value,
+            onSaved: (value) => _formData['Product'] = value!,
           ),
           TextFormField(
           initialValue:_formData['Quantity'],
           decoration: InputDecoration(labelText:'Quantity'),
-          onSaved: (value) => _formData['Quantity'] = value,
+          onSaved: (value) => _formData['Quantity'] = value!,
           ),
           TextFormField(
           initialValue:_formData['Price'],
           decoration: InputDecoration(labelText:'Price'),
-          onSaved: (value) => _formData['Price'] = value,
+          onSaved: (value) => _formData['Price'] = value!,
           ),
           TextFormField(
             initialValue:_formData['Tax'],
             decoration: InputDecoration(labelText:'Tax'),
-            onSaved: (value) => _formData['Tax'] = value,
+            onSaved: (value) => _formData['Tax'] = value!,
           ),
           TextFormField(
             initialValue:_formData['Total'],
             decoration: InputDecoration(labelText:'Total'),
-            onSaved: (value) => _formData['Total'] = value,
+            onSaved: (value) => _formData['Total'] = value!,
           )
             ],
           ),

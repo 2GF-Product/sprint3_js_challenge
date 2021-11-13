@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 
  mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
@@ -12,15 +13,9 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 
 
- /* const MongoClient = require('mongodb').MongoClient;
-
-const client = new MongoClient(process.env.DATABASE_URL, { useNewUrlParser: true });
-client.connect(err => {
-  const options = {w:"majority", readConcern: {level: "majority"}};
-  const db = client.db("test", options);
-});  */
 
 
+app.use(cors());
 app.use(express.json())
 const userRouter = require('./routes/user')
 const userInvoice = require('./routes/invoice')

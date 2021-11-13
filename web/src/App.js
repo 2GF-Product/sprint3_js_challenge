@@ -41,7 +41,9 @@ function App() {
               <Route path="/sign-up"  >
                 <SignUp />
               </Route>
-              {/*  <Route path="/sign-up" component={SignUp} /> */}
+              <Route path="/dashborad"  >
+              {/*   <Dashboard/> */}
+              </Route>
             </Switch>
           </div>
         </div>
